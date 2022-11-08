@@ -1,0 +1,22 @@
+.bg-img-1{
+  background-image: url("../../../../assets/group-elephants-big-green-tree-wilderness.jpg");
+  background-position: bottom;
+}
+.bg-img-2{
+    background-image: url('../../../../assets/beautiful-view-two-giraffes-grazing-by-trees-ol-pejeta-kenya.jpg');
+    background-position: center;
+}
+.bg-img-3{
+    background-image: url('../../../../assets/group-elephants-walking-dry-grass-wilderness.jpg');
+    background-position: bottom;
+}
+.bg-img-4{
+    background-image: url('../../../../assets/field-covered-grass-trees-surrounded-by-zebras-sunlight-during-sunset.jpg');
+    background-position: bottom;
+}
+.img-utilite{
+    background-size: cover;
+    background-repeat:no-repeat;
+    width: 100%;
+    height: 90vh;
+}
