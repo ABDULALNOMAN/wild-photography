@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { CallContext } from '../../Contexting/Contexting';
 
 const Navbar = () => {
+    const { users, logOutUser } = useContext(CallContext)
+    const handleLogOutClick = () => {
+        logOutUser()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
     return (
         <div className='bg-base-100'>
             <div className="navbar container mx-auto">
@@ -12,16 +20,16 @@ const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><a>Item 1</a></li>
                             <li><a>Item 2</a></li>
-                            <li><a>Item 3</a></li>
+                            {users?.email? <li onClick={handleLogOutClick}><Link>sign-Out</Link></li>: <li><Link to={'/login'}>login</Link></li>}
                         </ul>
                     </div>
                     <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
-                    <li><a>Item 3</a></li>
+                        <li><a>Item 1</a></li>
+                        <li><a>Item 2</a></li>
+                        {users?.email? <li onClick={handleLogOutClick}><Link>sign-Out</Link></li>: <li><Link to={'/login'}>login</Link></li>}
                     </ul>
                 </div>
                 <div className="navbar-end">
