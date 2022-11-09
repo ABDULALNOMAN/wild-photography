@@ -10,30 +10,35 @@ const Navbar = () => {
             .catch(error => console.log(error))
     }
     return (
-        <div className='bg-base-100'>
-            <div className="navbar container mx-auto">
-                <div className="navbar-start">
+        <div className='bg-sky-900'>
+            <div className="navbar justify-between container mx-auto">
+                 <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <div>
                     <div className="dropdown">
-                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                        <label tabIndex={0} className="btn btn-ghost md:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Item 1</a></li>
-                            <li><a>Item 2</a></li>
-                            {users?.email? <li onClick={handleLogOutClick}><Link>sign-Out</Link></li>: <li><Link to={'/login'}>login</Link></li>}
+                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 right-0">
+                            {users?.email ?<>
+                                <li><Link to={'/reviews'}>My reviews</Link></li>
+                                    <li><a>Add service</a></li>
+                                    <li onClick={handleLogOutClick}><Link>sign-Out</Link></li>
+                                </>:<>
+                                <li><Link to={'/login'}>login</Link></li>
+                                <li><Link to={''}>blog</Link></li>
+                                </>
+                            }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="hidden md:flex">
                     <ul className="menu menu-horizontal p-0">
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 2</a></li>
-                        {users?.email? <li onClick={handleLogOutClick}><Link>sign-Out</Link></li>: <li><Link to={'/login'}>login</Link></li>}
+                                <li><Link to={'/reviews'}>My reviews</Link></li>
+                                <li><a>Add service</a></li>
+                                <li onClick={handleLogOutClick}><Link>sign-Out</Link></li>
+                                <li><Link to={'/login'}>login</Link></li>
+                                <li><Link to={''}>blog</Link></li>
                     </ul>
-                </div>
-                <div className="navbar-end">
-                    <a className="btn">Get started</a>
                 </div>
             </div>
         </div>

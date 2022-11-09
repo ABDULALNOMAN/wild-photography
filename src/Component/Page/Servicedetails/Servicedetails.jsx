@@ -1,26 +1,34 @@
-import React,{useContext} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { PhotoView } from 'react-photo-view';
 import { useLoaderData } from 'react-router-dom';
 import { CallContext } from '../../Contexting/Contexting';
+import Servicereview from './Servicereview/Servicereview';
+import { Link } from 'react-router-dom';
 
 const Servicedetails = () => {
+    const [reviewItem, setReviewItem] = useState([])
     const { users } = useContext(CallContext)
-    console.log(users)
-    const data = useLoaderData()
-    const { image, name, price, rating, details, _id } = data
+    const { image, name, price, rating, details, _id } = useLoaderData()
+    useEffect(() => {
+        fetch('http://localhost:5000/getreviews')
+            .then(res => res.json())
+            .then(data =>setReviewItem(data))
+    }, [])
+    console.log(reviewItem)
     const handleReviewUser = (event) => {
         event.preventDefault()
         const form = event.target;
-        const name = form.name.value;
+        const username = form.name.value;
         const text = form.text.value;
         const photo = form.photo.value;
         const email = users?.email;
-        console.log(name, text, photo, email)
         const review = {
-            name: name,
+            name: username,
             photoUrl: photo,
             email: email,
-            text: text
+            text: text,
+            service: name,
+            rating:rating
         }
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
@@ -30,8 +38,15 @@ const Servicedetails = () => {
             body:JSON.stringify(review)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    const reviewDataItem = [...reviewItem, review]
+                    setReviewItem(reviewDataItem)
+                }
+            })
     }
+    console.log(users)
     return (
         <div className='container mx-auto'>
             <div className="w-full shadow-xl col-span-6 h-full bg-sky-500 my-5">
@@ -49,17 +64,22 @@ const Servicedetails = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex flex-col'>
+            <div className='flex flex-row w-full'>
+                {users?.email ?     
                 <form onSubmit={handleReviewUser} className='w-1/3'>
-                    <input type="text" name='name' placeholder="enter your name" className="input input-bordered input-primary w-full mb-2" />
+                    <input type="text" name='name' placeholder="enter your name" className='input input-bordered input-primary w-full mb-2'/>
                     <br />
-                    <input type="text" name='photo' placeholder="enter your name" className="input input-bordered input-primary w-full mb-2"  />
+                    <input type="text" name='photo' placeholder="enter your photoUrl" className="input input-bordered input-primary w-full mb-2" />
                     <br />
                     <textarea name='text' className="textarea textarea-bordered w-full h-48" placeholder="enter your review text"></textarea>
                     <button className='btn btn-primary w-full'>submit</button>
-                </form>
-                <div>
-                    
+                    </form>
+                    :
+                    <h2 className='w-1/3 text-4xl mt-10 font-semibold'>please <Link className='text-blue-600 underline ' to="/login">log in</Link> to add a review</h2>}
+                <div className='w-2/3 ml-6'>
+                    {
+                        reviewItem.map(rivi=><Servicereview key={rivi._id} review={rivi}></Servicereview>)
+                    }
                 </div>
             </div>
         </div>

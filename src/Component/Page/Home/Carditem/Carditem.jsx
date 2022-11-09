@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Carditem = ({ item }) => {
-    console.log(item)
     const {_id,image,name,rating ,details,price}=item
     return (
         <div className=''>

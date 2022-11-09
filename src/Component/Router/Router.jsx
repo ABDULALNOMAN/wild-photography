@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../Page/Home/Home";
 import Login from "../Page/Login/Login";
 import Main from "../Page/Main/Main";
+import Myreviews from "../Page/Myreviews/Myreviews";
+import Privetroute from "../Page/Privetroute/Privetroute";
 import Register from "../Page/Register/Register";
 import Servicedetails from "../Page/Servicedetails/Servicedetails";
 import Services from "../Page/Services/Services";
@@ -35,7 +37,11 @@ const router = createBrowserRouter([
                 loader: (({params}) => {
                     return fetch(`http://localhost:5000/services/${params.id}`)
                 })
-            }
+            },
+            {
+                path:'/reviews',
+                element:<Privetroute><Myreviews></Myreviews></Privetroute>
+            },
         ])
     }
 ])

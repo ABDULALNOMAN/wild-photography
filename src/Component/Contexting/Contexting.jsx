@@ -4,14 +4,15 @@ import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthState
 
 export const CallContext = createContext()
 const auth = getAuth(app)
-const provider = new GoogleAuthProvider()
 
 const Contexting = ({ children }) => {
+    const provider = new GoogleAuthProvider()
+    const [loding, setloding] = useState(true)
     const [users , setUsers ] = useState({})
-    const createUserData = (email,password) => {
+    const createUserData = (email, password) => {
         return createUserWithEmailAndPassword(auth,email,password)
     }
-    const loginUserData = (email,password) => {
+    const loginUserData = (email, password) => {
         return signInWithEmailAndPassword(auth,email,password)
     }
     const GoogleLoginUsers = () => {
@@ -19,6 +20,7 @@ const Contexting = ({ children }) => {
     }
     useEffect(() => {
         const unsubcribe = onAuthStateChanged(auth, currentUser => {
+            setloding(false)
             setUsers(currentUser)
         })
         return (() => {
@@ -26,9 +28,10 @@ const Contexting = ({ children }) => {
         })
     }, [])
     const logOutUser = () => {
+        setUsers(null)
         return signOut(auth)
     }
-    const value ={createUserData,users,logOutUser,loginUserData,GoogleLoginUsers}
+    const value ={createUserData,users,logOutUser,loginUserData,GoogleLoginUsers, loding}
     return (
         <CallContext.Provider value={value}>
             {children}

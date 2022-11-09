@@ -1,8 +1,12 @@
 import React, { useContext } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { CallContext } from '../../Contexting/Contexting';
 
 const Login = () => {
-    const { loginUserData,GoogleLoginUsers } = useContext(CallContext)
+    const { loginUserData, GoogleLoginUsers } = useContext(CallContext)
+    const navigete = useNavigate()
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/'
     const handleLoginUser = (event) => {
         event.preventDefault()
         const form = event.target;
@@ -12,6 +16,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                navigete(from, { replace: true });
             })
             .catch(error => console.log(error))
     }
