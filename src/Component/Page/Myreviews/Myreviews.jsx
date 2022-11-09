@@ -1,8 +1,11 @@
-import React,{useContext,useState,useEffect} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { CallContext } from '../../Contexting/Contexting';
 import Reviewitem from './Reviewitem/Reviewitem';
 
 const Myreviews = () => {
+    toast('one item delete')
     const [items, setitem] = useState([])
     const { users } = useContext(CallContext)
     useEffect(() => {
@@ -16,11 +19,26 @@ const Myreviews = () => {
             }
         })
     }, [])
+    const handleDelete = (id) => {
+        fetch (`http://localhost:5000/deletedata?delete=${id}`, {
+            method:'DELETE'
+        })
+        .then(res=>res.json())
+            .then(data => {
+                console.log(data)
+                if (data.deletedCount > 0) {
+                    const exist = items.filter(item=>item._id !== id)
+                    setitem(exist)
+                }
+            })
+    }
     return (
-        <div className='container mx-auto'>
-            {
-                items.map(item =><Reviewitem key={item._id} item={item}></Reviewitem>)
-            }
+        <div className='container mx-auto min-h-screen'>
+            <div className=''>
+                {
+                    items.length>0? items.map(item =><Reviewitem key={item._id} item={item} handleDelete={handleDelete}></Reviewitem>):<div>No reviews were added</div>
+                }
+            </div>
         </div>
     );
 };
