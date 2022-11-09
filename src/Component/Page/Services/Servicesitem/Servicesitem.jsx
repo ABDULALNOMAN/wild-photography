@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import { PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
@@ -8,6 +9,9 @@ const Servicesitem = ({ data }) => {
     const { name, _id, price, rating, details, image } = data
     return (
         <div>
+            <Helmet>
+                <title>Services</title>
+            </Helmet>
             <div className="w-full shadow-xl h-full">
                 <div className='flex flex-col h-full'>
                     <div className='bg-sky-400 rounded-t-xl h-full '>

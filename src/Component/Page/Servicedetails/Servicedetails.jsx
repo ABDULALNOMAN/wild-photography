@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import { CallContext } from '../../Contexting/Contexting';
 import Servicereview from './Servicereview/Servicereview';
 import { Link } from 'react-router-dom';
+import Helmet from 'react-helmet';
 
 const Servicedetails = () => {
     const [reviewItem, setReviewItem] = useState([])
@@ -49,6 +50,9 @@ const Servicedetails = () => {
     console.log(users)
     return (
         <div className='container mx-auto'>
+            <Helmet>
+                <title>servicesDetails</title>
+            </Helmet>
             <div className="w-full shadow-xl col-span-6 h-full bg-sky-500 my-5">
                 <div className='flex flex-row'>
                     <div className='w-1/3 h-full'>

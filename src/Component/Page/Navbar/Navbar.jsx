@@ -12,7 +12,7 @@ const Navbar = () => {
     return (
         <div className='bg-sky-900'>
             <div className="navbar justify-between container mx-auto">
-                 <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                 <Link to={'/'} className="btn btn-ghost normal-case text-xl">daisyUI</Link>
                 <div>
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost md:hidden">
@@ -28,16 +28,22 @@ const Navbar = () => {
                                 <li><Link to={''}>blog</Link></li>
                                 </>
                             }
+                            <li><Link to={'/addservices'}>add services</Link></li>
                         </ul>
                     </div>
                 </div>
                 <div className="hidden md:flex">
                     <ul className="menu menu-horizontal p-0">
-                                <li><Link to={'/reviews'}>My reviews</Link></li>
-                                <li><a>Add service</a></li>
-                                <li onClick={handleLogOutClick}><Link>sign-Out</Link></li>
-                                <li><Link to={'/login'}>login</Link></li>
-                                <li><Link to={''}>blog</Link></li>
+                        {users?.email ?<>
+                            <li><Link to={'/reviews'}>My reviews</Link></li>
+                            <li><a>Add service</a></li>
+                            <li onClick={handleLogOutClick}><Link>sign-Out</Link></li>
+                        </>:<>
+                            <li><Link to={'/login'}>login</Link></li>
+                            <li><Link to={''}>blog</Link></li>
+                                </>
+                        }
+                        <li><Link to={'/addservices'}>add services</Link></li>
                     </ul>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Helmet from 'react-helmet';
 import { CallContext } from '../../Contexting/Contexting';
 
 const Register = () => {
@@ -17,6 +18,9 @@ const Register = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>register</title>
+            </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">

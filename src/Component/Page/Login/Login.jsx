@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Helmet from 'react-helmet';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { CallContext } from '../../Contexting/Contexting';
 
@@ -30,6 +31,9 @@ const Login = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>servicesDetails</title>
+            </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">

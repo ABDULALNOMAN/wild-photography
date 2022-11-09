@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import Helmet from 'react-helmet';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { CallContext } from '../../Contexting/Contexting';
@@ -34,6 +35,9 @@ const Myreviews = () => {
     }
     return (
         <div className='container mx-auto min-h-screen'>
+            <Helmet>
+                <title>servicesDetails</title>
+            </Helmet>
             <div className=''>
                 {
                     items.length>0? items.map(item =><Reviewitem key={item._id} item={item} handleDelete={handleDelete}></Reviewitem>):<div>No reviews were added</div>
