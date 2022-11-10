@@ -19,7 +19,7 @@ const Reviewitem = ({ item,handleDelete }) => {
                 </div>
                 <div>
                     <button onClick={() => handleDelete(_id)} className="btn btn-sm mt-2 btn-warning">delete</button>
-                    <ToastContainer />
+                    
                 </div>
             </div>
         </div>

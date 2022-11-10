@@ -34,7 +34,7 @@ const Addservices = () => {
             })
     }
     return (
-        <div>
+        <div className='w-full'>
             <form onSubmit={handleAddServices} className='flex flex-col'>
                 <input type="text" placeholder="name" name='name' className="input input-bordered input-info w-full max-w-xs" />
                 <input type="text" placeholder="imgUrl" name='image' className="input input-bordered input-info w-full max-w-xs" />

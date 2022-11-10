@@ -21,14 +21,13 @@ const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 right-0">
                             {users?.email ?<>
                                 <li><Link to={'/reviews'}>My reviews</Link></li>
-                                    <li><a>Add service</a></li>
+                                    <li><Link to={'/addservices'}>Add service</Link></li>
                                     <li onClick={handleLogOutClick}><Link>sign-Out</Link></li>
                                 </>:<>
                                 <li><Link to={'/login'}>login</Link></li>
                                 <li><Link to={''}>blog</Link></li>
                                 </>
                             }
-                            <li><Link to={'/addservices'}>add services</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -36,14 +35,13 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal p-0">
                         {users?.email ?<>
                             <li><Link to={'/reviews'}>My reviews</Link></li>
-                            <li><a>Add service</a></li>
+                            <li><Link to={'/addservices'}>Add service</Link></li>
                             <li onClick={handleLogOutClick}><Link>sign-Out</Link></li>
                         </>:<>
                             <li><Link to={'/login'}>login</Link></li>
                             <li><Link to={''}>blog</Link></li>
-                                </>
+                        </>
                         }
-                        <li><Link to={'/addservices'}>add services</Link></li>
                     </ul>
                 </div>
             </div>

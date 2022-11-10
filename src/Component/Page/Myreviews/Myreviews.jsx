@@ -28,6 +28,7 @@ const Myreviews = () => {
             .then(data => {
                 console.log(data)
                 if (data.deletedCount > 0) {
+                    confirm('one item delete')
                     const exist = items.filter(item=>item._id !== id)
                     setitem(exist)
                 }
