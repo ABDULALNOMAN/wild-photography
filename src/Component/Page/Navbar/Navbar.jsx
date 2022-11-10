@@ -9,7 +9,6 @@ const Navbar = () => {
             .then(() => { })
             .catch(error => console.log(error))
     }
-    console.log(users)
     return (
         <div className='bg-sky-900'>
             <div className="navbar justify-between container mx-auto">

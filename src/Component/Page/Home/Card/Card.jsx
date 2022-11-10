@@ -9,7 +9,6 @@ const Card = () => {
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
-    console.log(items)
     return (
         <div className=' bg-sky-900 '>
             <div className='py-20 container mx-auto'>

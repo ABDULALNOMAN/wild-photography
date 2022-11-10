@@ -16,7 +16,6 @@ const Myreviews = () => {
             if (users?.email) {
                 const datas = data.filter(n=>n.email===users?.email)
                 setitem(datas)
-                console.log(datas)
             }
         })
     }, [])
