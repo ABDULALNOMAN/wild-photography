@@ -34,14 +34,26 @@ const Addservices = () => {
             })
     }
     return (
-        <div className='w-full'>
-            <form onSubmit={handleAddServices} className='flex flex-col'>
-                <input type="text" placeholder="name" name='name' className="input input-bordered input-info w-full max-w-xs" />
-                <input type="text" placeholder="imgUrl" name='image' className="input input-bordered input-info w-full max-w-xs" />
-                <input type="text" placeholder="price" name='price' className="input input-bordered input-info w-full max-w-xs" />
-                <input type="text" placeholder="rating" name='rating' className="input input-bordered input-info w-full max-w-xs" />
-                <textarea className="textarea textarea-primary w-48" placeholder="details" name='text'></textarea>
-                <button className='btn btn-primary w-28'>click</button>
+        <div className='w-full mx-auto py-10 bg-sky-800'>
+            <form onSubmit={handleAddServices} className='grid grid-cols-1 gap-2 w-2/3 mx-auto'>
+                <div className='grid grid-cols-2 gap-2 w-full'>
+                    <div className='w-full'>
+                        <input type="text" placeholder="name" name='name' className="input input-bordered input-info w-full " />
+                    </div>
+                    <div className='w-full '>
+                        <input type="text" placeholder="imgUrl" name='image' className="input input-bordered input-info w-full " />
+                    </div>
+                </div>
+                <div className='grid grid-cols-2 gap-2 w-full'>
+                    <div className='w-full'>
+                        <input type="text" placeholder="price" name='price' className="input input-bordered input-info w-full " />
+                    </div>
+                    <div className='w-full'>
+                        <input type="text" placeholder="rating" name='rating' className="input input-bordered input-info w-full " />
+                    </div>
+                </div>
+                <textarea className="textarea textarea-primary w-full h-28" placeholder="details" name='text'></textarea>
+                <button className='btn btn-info w-full'>click</button>
             </form>
         </div>
     );
