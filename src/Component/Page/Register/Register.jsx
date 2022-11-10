@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Helmet from 'react-helmet';
 import { CallContext } from '../../Contexting/Contexting';
+import imgregis from "../../../assets/undraw_access_account_re_8spm.svg";
 
 const Register = () => {
     const { createUserData } = useContext(CallContext)
@@ -21,25 +22,21 @@ const Register = () => {
             <Helmet>
                 <title>register</title>
             </Helmet>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">register now!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form onSubmit={handleCreateUser} className="card-body">
-                            <div className="form-control">
+            <div className="bg-sky-700 ">
+                <div className="grid grid-cols-2 gap-6 container mx-auto py-10 w-screen">
+                    <div className="shadow-lg shadow-slate-900 bg-cyan-600 p-4 col-span-1 max-w-full">
+                        <form onSubmit={handleCreateUser} className="">
+                            <div className="">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="">Email</span>
                             </label>
-                            <input type="email" placeholder="email" name='email' className="input input-bordered" />
+                            <input type="email" placeholder="email" name='email' className="input input-bordered input-info w-full" />
                             </div>
-                            <div className="form-control">
+                            <div className="">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="">Password</span>
                             </label>
-                            <input type="password" placeholder="password" name='password' className="input input-bordered" />
+                            <input type="password" placeholder="password" name='password' className="input input-bordered input-info w-full" />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
@@ -47,7 +44,10 @@ const Register = () => {
                             <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                             </div>
-                        </form>
+                        </form> 
+                    </div>
+                    <div className='mx-auto col-span-1 w-full'>
+                        <img src={imgregis} alt="" className='h-96' />
                     </div>
                 </div>
             </div>
