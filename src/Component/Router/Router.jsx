@@ -5,6 +5,7 @@ import Home from "../Page/Home/Home";
 import Login from "../Page/Login/Login";
 import Main from "../Page/Main/Main";
 import Myreviews from "../Page/Myreviews/Myreviews";
+import Notfound from "../Page/Notfound/Notfound";
 import Privetroute from "../Page/Privetroute/Privetroute";
 import Register from "../Page/Register/Register";
 import Servicedetails from "../Page/Servicedetails/Servicedetails";
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
                 element:<Blog></Blog>
             }
         ])
+    },
+    {
+        path: '*',
+        element:<Notfound></Notfound>
     }
 ])
 export default router

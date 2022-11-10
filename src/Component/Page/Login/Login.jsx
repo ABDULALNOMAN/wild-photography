@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Helmet from 'react-helmet';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { CallContext } from '../../Contexting/Contexting';
 import loginimg from '../../../assets/undraw_two_factor_authentication_namy.svg';
 
@@ -55,7 +55,7 @@ const Login = () => {
                                 </label>
                                 <input type="password" placeholder="password" name='password' className="input input-bordered input-info w-full" />
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                    <p className='small'>your existing not account <Link to={'/register'} className='text-blue-700 underline font-bold'>please register</Link></p>
                                 </label>
                                 </div>
                                 <div className="form-control mt-6">

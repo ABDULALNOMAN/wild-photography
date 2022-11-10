@@ -25,8 +25,9 @@ const Navbar = () => {
                                     <li><Link to={'/addservices'}>Add service</Link></li>
                                     <li onClick={handleLogOutClick}><Link>sign-Out</Link></li>
                                 </>:<>
-                                <li><Link to={'/login'}>login</Link></li>
-                                <li><Link to={''}>blog</Link></li>
+                                    <li><Link to={'/blog'}>blog</Link></li>
+                                    <li><Link to={'/login'}>login</Link></li>
+                                    <li><Link to={'/register'}>register</Link></li>
                                 </>
                             }
                         </ul>
@@ -39,8 +40,9 @@ const Navbar = () => {
                             <li><Link to={'/addservices'}>Add service</Link></li>
                             <li onClick={handleLogOutClick}><Link>sign-Out</Link></li>
                         </>:<>
-                            <li><Link to={'/login'}>login</Link></li>
-                            <li><Link to={''}>blog</Link></li>
+                                <li><Link to={'/blog'}>blog</Link></li>
+                                <li><Link to={'/login'}>login</Link></li>
+                                <li><Link to={'/register'}>register</Link></li>
                         </>
                         }
                     </ul>
