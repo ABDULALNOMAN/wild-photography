@@ -11,14 +11,16 @@ const Card = () => {
     }, [])
     console.log(items)
     return (
-        <div className='bg-sky-900 py-20'>
-            <div className='grid grid-cols-3 gap-6 container mx-auto my-6'>
-                {
-                    items.map(item=><Servicesitem key={item.index} item={item}></Servicesitem>)
-                }
-            </div>
-            <div className='text-center'>
-                <Link to={'/services'}><button className='btn btn-warning w-48'>see all</button></Link>
+        <div className=' bg-sky-900 '>
+            <div className='py-20 container mx-auto'>
+                <div className='grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-6 my-6'>
+                    {
+                        items.map(item=><Servicesitem key={item.index} item={item}></Servicesitem>)
+                    }
+                </div>
+                <div className='text-center'>
+                    <Link to={'/services'}><button className='btn btn-warning w-48'>see all</button></Link>
+                </div>
             </div>
         </div>
     );

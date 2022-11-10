@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Carditem = ({ item }) => {
     const {_id,image,name,rating ,details,price}=item
     return (
-        <div className='shadow-2xl'>
-            <div className="w-full shadow-xl col-span-6 h-full">
+        <div className='shadow-2xl md:px-0 px-10'>
+            <div className="w-full shadow-xl  h-full">
                 <div className='flex flex-col h-full'>
                     <div className='h-full bg-sky-700'>
                         <figure><img src={image} alt="wild" className='w-full' /></figure>
