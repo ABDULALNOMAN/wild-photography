@@ -18,7 +18,7 @@ const Addservices = () => {
             price: price,
             details:text,
         }
-        fetch('http://localhost:5000/addservices', {
+        fetch('https://creative-assign-server-abdulalnoman.vercel.app/addservices', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -35,7 +35,7 @@ const Addservices = () => {
     }
     return (
         <div className='w-full mx-auto py-10 bg-sky-800'>
-            <form onSubmit={handleAddServices} className='grid grid-cols-1 gap-2 w-2/3 mx-auto'>
+            <form onSubmit={handleAddServices} className='grid grid-cols-1 gap-2 md:w-2/3 md:mx-auto mx-4'>
                 <div className='grid grid-cols-2 gap-2 w-full'>
                     <div className='w-full'>
                         <input type="text" placeholder="name" name='name' className="input input-bordered input-info w-full " />

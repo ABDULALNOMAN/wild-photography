@@ -31,13 +31,13 @@ const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader:(()=>fetch('http://localhost:5000/services'))
+                loader:(()=>fetch('https://creative-assign-server-abdulalnoman.vercel.app/services'))
             },
             {
                 path:'/services/:id',
                 element: <Servicedetails></Servicedetails>,
                 loader: (({params}) => {
-                    return fetch(`http://localhost:5000/services/${params.id}`)
+                    return fetch(`https://creative-assign-server-abdulalnoman.vercel.app/services/${params.id}`)
                 })
             },
             {

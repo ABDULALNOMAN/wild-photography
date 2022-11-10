@@ -1,12 +1,12 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../Firebase/Firebase';
-import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from 'firebase/auth'
+import {createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from 'firebase/auth'
 
 export const CallContext = createContext()
 const auth = getAuth(app)
 
 const Contexting = ({ children }) => {
-    const provider = new GoogleAuthProvider()
+    const provider = new GithubAuthProvider()
     const [loding, setloding] = useState(true)
     const [users , setUsers ] = useState({})
     const createUserData = (email, password) => {
@@ -15,8 +15,8 @@ const Contexting = ({ children }) => {
     const loginUserData = (email, password) => {
         return signInWithEmailAndPassword(auth,email,password)
     }
-    const GoogleLoginUsers = () => {
-        return signInWithPopup(auth ,provider)
+    const githubLoginUsers = () => {
+        return signInWithPopup(auth, provider)
     }
     useEffect(() => {
         const unsubcribe = onAuthStateChanged(auth, currentUser => {
@@ -31,7 +31,7 @@ const Contexting = ({ children }) => {
         setUsers(null)
         return signOut(auth)
     }
-    const value ={createUserData,users,logOutUser,loginUserData,GoogleLoginUsers, loding}
+    const value ={createUserData,users,logOutUser,loginUserData, githubLoginUsers, loding}
     return (
         <CallContext.Provider value={value}>
             {children}

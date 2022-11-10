@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Servicesitem from '../Carditem/Carditem';
-import { Link} from 'react-router-dom';
 
 const Card = () => {
     const [items, setItems] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://creative-assign-server-abdulalnoman.vercel.app/products')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])

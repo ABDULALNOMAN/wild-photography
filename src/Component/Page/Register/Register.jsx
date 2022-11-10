@@ -18,13 +18,13 @@ const Register = () => {
             .catch(error => console.log(error))
     }
     return (
-        <div>
+        <div className=' bg-sky-700 '>
             <Helmet>
                 <title>register</title>
             </Helmet>
-            <div className="bg-sky-700 ">
-                <div className="grid grid-cols-2 gap-6 container mx-auto py-10 w-screen">
-                    <div className="shadow-lg shadow-slate-900 bg-cyan-600 p-4 col-span-1 max-w-full">
+            <div className="container mx-auto">
+                <div className="flex md:flex-row flex-col-reverse  justify-between gap-6 py-10  mx-8">
+                    <div className="shadow-lg shadow-slate-900 p-4 bg-cyan-600 lg:w-1/3 md:w-2/4 w-full">
                         <form onSubmit={handleCreateUser} className="">
                             <div className="">
                             <label className="label">
@@ -46,7 +46,7 @@ const Register = () => {
                             </div>
                         </form> 
                     </div>
-                    <div className='mx-auto col-span-1 w-full'>
+                    <div className='lg:w-2/3 lg:ml-16 ml-0 md:w-2/4 w-full mx-auto'>
                         <img src={imgregis} alt="" className='h-96' />
                     </div>
                 </div>

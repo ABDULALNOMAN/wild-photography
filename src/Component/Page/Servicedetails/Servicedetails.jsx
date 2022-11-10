@@ -1,17 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
+import Helmet from 'react-helmet';
 import { PhotoView } from 'react-photo-view';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { CallContext } from '../../Contexting/Contexting';
 import Servicereview from './Servicereview/Servicereview';
-import { Link } from 'react-router-dom';
-import Helmet from 'react-helmet';
 
 const Servicedetails = () => {
     const [reviewItem, setReviewItem] = useState([])
     const { users } = useContext(CallContext)
     const { image, name, price, rating, details, _id } = useLoaderData()
     useEffect(() => {
-        fetch('http://localhost:5000/getreviews')
+        fetch('https://creative-assign-server-abdulalnoman.vercel.app/getreviews')
             .then(res => res.json())
             .then(data =>setReviewItem(data))
     }, [])
@@ -31,7 +30,7 @@ const Servicedetails = () => {
             service: name,
             rating:rating
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://creative-assign-server-abdulalnoman.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'
