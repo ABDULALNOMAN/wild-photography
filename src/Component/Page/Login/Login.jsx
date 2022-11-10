@@ -67,7 +67,7 @@ const Login = () => {
                                 <p className='mx-3'>or</p>
                                 <p className='border w-full'></p>
                             </div>
-                            <button onClick={handleGithubLogin} className='btn btn-info w-full'>google</button>
+                            <button onClick={handleGithubLogin} className='btn btn-info w-full'>github</button>
                         </div>
                     </div>
                 </div>
