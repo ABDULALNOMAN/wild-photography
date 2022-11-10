@@ -9,12 +9,13 @@ const Navbar = () => {
             .then(() => { })
             .catch(error => console.log(error))
     }
+    console.log(users)
     return (
         <div className='bg-sky-900'>
             <div className="navbar justify-between container mx-auto">
-                 <Link to={'/'} className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                 <Link to={'/'} className="btn btn-ghost normal-case text-xl">creation</Link>
                 <div>
-                    <div className="dropdown">
+                    <div className="dropdown mr-3">
                         <label tabIndex={0} className="btn btn-ghost md:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>

@@ -50,11 +50,11 @@ const Servicedetails = () => {
     console.log(users)
     return (
         <div className='bg-cyan-800'>
-            <div className='container mx-auto'>
+            <div className='container mx-auto py-4'>
                 <Helmet>
                     <title>servicesDetails</title>
                 </Helmet>
-                <div className="w-full shadow-xl col-span-6 h-full bg-sky-500 my-5">
+                <div className="w-full shadow-xl col-span-6 h-full bg-sky-500 py-5">
                     <div className='flex flex-row h-full p-3'>
                         <div className='w-2/3 h-full'>
                             <PhotoView src={image}>
@@ -69,7 +69,7 @@ const Servicedetails = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-row w-full'>
+                <div className='flex flex-row w-full mt-2'>
                     {users?.email ?     
                     <form onSubmit={handleReviewUser} className='w-1/3'>
                         <input type="text" name='name' placeholder="enter your name" className='input input-bordered input-primary w-full mb-2'/>
