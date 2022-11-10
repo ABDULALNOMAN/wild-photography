@@ -11,11 +11,6 @@ const Servicereview = ({ review }) => {
             <div>
                 <p>{text}</p>
             </div>
-            <div className='my-2 mr-2'>
-                <button className="btn btn-sm btn-success">update</button>
-                <br />
-                <button className="btn btn-sm mt-2 btn-warning">remove</button>
-            </div>
         </div>
     );
 };

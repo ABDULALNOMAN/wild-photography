@@ -1,13 +1,13 @@
 .bg-img-1{
-  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0, 0, 0, 0.4)), url("../../../../assets/travel-concept-with-landmarks.jpg");
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0, 0, 0, 0.4)), url("../../../../assets/group-elephants-walking-dry-grass-wilderness.jpg");
   background-position:center;
 }
 .bg-img-2{
-    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0, 0, 0, 0.6)), url('../../../../assets/beautiful-tropical-beach-sea.jpg');
+    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0, 0, 0, 0.6)), url('../../../../assets/flamingo.jpg');
     background-position: center;
 }
 .bg-img-3{
-    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0, 0, 0, 0.6)), url('../../../../assets/water-famous-architecture-finance-shanghai-tower.jpg');
+    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0, 0, 0, 0.6)), url('../../../../assets/selective-focus-shot-beautiful-bird-flying-high-forest.jpg');
     background-position: center;
 }
 .img-utilite{

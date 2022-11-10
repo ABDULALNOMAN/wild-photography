@@ -11,7 +11,7 @@ const Card = () => {
     }, [])
     console.log(items)
     return (
-        <div>
+        <div className='bg-sky-900 py-20'>
             <div className='grid grid-cols-3 gap-6 container mx-auto my-6'>
                 {
                     items.map(item=><Servicesitem key={item.index} item={item}></Servicesitem>)

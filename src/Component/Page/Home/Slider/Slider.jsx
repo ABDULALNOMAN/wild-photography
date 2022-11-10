@@ -1,8 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import img1 from '../../../../assets/beautiful-tropical-beach-sea.jpg'
-import img2 from '../../../../assets/travel-concept-with-landmarks.jpg'
-import './Slider.css'
 
 
 const Slider = () => {
