@@ -8,7 +8,7 @@ const Servicesitem = ({ data }) => {
     console.log(data)
     const { name, _id, price, rating, details, image } = data
     return (
-        <div>
+        <div className='md:mx-0 mx-10 md:mb-3 mb-3'>
             <Helmet>
                 <title>Services</title>
             </Helmet>
@@ -18,7 +18,7 @@ const Servicesitem = ({ data }) => {
                         <figure><img src={image} alt="wild" className='w-full' /></figure>
                         <div className="mx-3 capitalize">
                             <h2 className="text-2xl font-semibold text-warning">{name}</h2>
-                            <p className='text-md'>{details > 100 ? details : details.slice(0, 100) }</p>
+                            <p className='text-md'> {details > 100 ? details : details.slice(0, 100) }</p>
                             <div className='flex justify-between items-end mt-3 mb-0 relative bottom-0'>
                                 <p className='text-lg'><span className=' font-semibold'>price</span> :${price}</p>
                                 <p className='text-lg'><span className='font-semibold'>rating</span> :{rating}</p>

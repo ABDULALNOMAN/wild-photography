@@ -6,7 +6,7 @@ const Services = () => {
     const datas = useLoaderData()
     return (
         <div className='bg-sky-800 py-8'>
-            <div className='grid grid-cols-3 gap-4 container mx-auto my-5 '>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 container mx-auto my-5 '>
                 {
                     datas.map(data=><Servicesitem key={data._id} data={data}></Servicesitem>)
                 }
