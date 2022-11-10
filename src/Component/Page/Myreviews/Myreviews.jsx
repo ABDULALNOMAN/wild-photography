@@ -35,14 +35,16 @@ const Myreviews = () => {
             })
     }
     return (
-        <div className='container mx-auto min-h-screen'>
+        <div className='bg-sky-700'>
+            <div className='container mx-auto min-h-screen '>
             <Helmet>
                 <title>servicesDetails</title>
             </Helmet>
-            <div className=''>
-                {
-                    items.length>0? items.map(item =><Reviewitem key={item._id} item={item} handleDelete={handleDelete}></Reviewitem>):<div>No reviews were added</div>
-                }
+                <div className=''>
+                    {
+                        items.length>0? items.map(item =><Reviewitem key={item._id} item={item} handleDelete={handleDelete}></Reviewitem>):<div className='text-5xl text-center pt-28'>No reviews were added</div>
+                    }
+                </div>
             </div>
         </div>
     );
