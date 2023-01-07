@@ -6,11 +6,11 @@ import { PhotoProvider } from 'react-photo-view';
 import Contexting from './Component/Contexting/Contexting';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Contexting>
       <PhotoProvider>
         <App />
       </PhotoProvider>
     </Contexting>
-  </React.StrictMode>
+  // </React.StrictMode>
 )

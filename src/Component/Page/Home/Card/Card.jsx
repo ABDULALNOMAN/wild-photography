@@ -5,14 +5,14 @@ import Servicesitem from '../Carditem/Carditem';
 const Card = () => {
     const [items, setItems] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://creative-assign-server.vercel.app/products')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
     return (
         <div className=''>
             <div className='py-4 container mx-auto'>
-                <div className='grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-6 my-6 rounded-md'>
+                <div className='grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-6 my-6 rounded-md '>
                     {
                         items.map((item)=><Servicesitem key={item._id} item={item}></Servicesitem>)
                     }

@@ -8,13 +8,13 @@ const About = () => {
     return (
         <div>
             <div className='text-center'>
-                <h1 className='text-xl capitalize'>about</h1>
-                <h3 className='text-2xl mt-3'>description of a wildlife photographer</h3>
+                <h1 className='text-3xl capitalize font-bebas'>about</h1>
+                <h3 className='text-lg text-orange-700 font-bold'>description of a wildlife photographer</h3>
             </div>
-            <div className='bg-cyan-900 border-r-8 border-r-yellow-500 my-8'>
-                <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-col-1 md:mx-0 mx-8 py-8'>
+            <div className='lg:border-y-2 lg:border-l-2 border-r-8 border-r-yellow-500 my-8 hover:bg-slate-800 transition-colors duration-500 md:py-0 py-7'>
+                <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-col-1 md:mx-0 mx-8 '>
                     <img src={photographer} className="w-full h-full md:col-span-1" alt="" />
-                    <div className='lg:col-span-2 md:col-span-1 lg:mx-4  md:mt-0 py-4'>
+                    <div className='lg:col-span-2 md:col-span-1 md:mx-4  md:mt-0 py-4'>
                         <div className='flex justify-between items-start py-4'>
                             <div>
                                 <h1 className='text-3xl font-bebas'>Thomas Marent</h1>

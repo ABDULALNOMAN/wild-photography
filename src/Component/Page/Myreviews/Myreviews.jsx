@@ -10,7 +10,7 @@ const Myreviews = () => {
     const [items, setitem] = useState([])
     const { users } = useContext(CallContext)
     useEffect(() => {
-      fetch('http://localhost:5000/getreviews')
+      fetch('https://creative-assign-server.vercel.app/getreviews')
         .then(res => res.json())
         .then(data => {
             if (users?.email) {
@@ -20,7 +20,7 @@ const Myreviews = () => {
         })
     }, [])
     const handleDelete = (id) => {
-        fetch (`http://localhost:5000/deletedata?delete=${id}`, {
+        fetch (`https://creative-assign-server.vercel.app/deletedata?delete=${id}`, {
             method:'DELETE'
         })
         .then(res=>res.json())
