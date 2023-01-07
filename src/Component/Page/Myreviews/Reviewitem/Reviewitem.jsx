@@ -12,7 +12,10 @@ const Reviewitem = ({ item,handleDelete }) => {
                         <h4 className='text-2xl '>{name}</h4>
                     </div>
                 </div>
-                <button onClick={() => handleDelete(_id)} className="btn btn-sm mt-2 btn-warning absolute right-2 top-3">delete</button>
+                <div>
+                    <button onClick={() => handleDelete(_id)} className="btn btn-sm mt-2 btn-warning absolute right-2 top-3">delete</button>
+                    <button className='btn btn-primary'>update</button>
+                </div>
             </div>
             <hr />
             <div className='p-4'>

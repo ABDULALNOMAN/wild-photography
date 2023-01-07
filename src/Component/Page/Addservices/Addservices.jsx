@@ -18,7 +18,7 @@ const Addservices = () => {
             price: price,
             details:text,
         }
-        fetch('https://creative-assign-server-abdulalnoman.vercel.app/addservices', {
+        fetch('http://localhost:5000/addservices', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'

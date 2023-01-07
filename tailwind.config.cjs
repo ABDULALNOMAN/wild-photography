@@ -5,7 +5,13 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "bebas": ['Bebas Neue', "cursive"],
+        "roboto": ['Roboto', "sans-serif"],
+        "fontParagrap":['Roboto Condensed', "sans-serif"]
+      }
+    },
   },
   plugins: [require("daisyui")],
 }

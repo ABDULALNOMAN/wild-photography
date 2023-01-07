@@ -5,8 +5,8 @@ import { CallContext } from '../../Contexting/Contexting';
 import loginimg from '../../../assets/undraw_two_factor_authentication_namy.svg';
 
 const Login = () => {
-    const { loginUserData, githubLoginUsers } = useContext(CallContext)
-    const navigete = useNavigate()
+    const { loginUserData, githubLoginUsers, users, } = useContext(CallContext)
+    const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state?.from?.pathname || '/'
     const handleLoginUser = (event) => {
@@ -17,8 +17,10 @@ const Login = () => {
         loginUserData(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
-                navigete(from, { replace: true });
+                if (user.email) {
+                    console.log(user)
+                    navigate(from,{ replace:true});  
+                }
             })
             .catch(error => console.log(error))
     }
@@ -34,6 +36,7 @@ const Login = () => {
         <div>
             <Helmet>
                 <title>servicesDetails</title>
+                <meta name="description" content="Helmet application" />
             </Helmet>
             <div className="bg-sky-700 ">
                 <div className='container mx-auto'>

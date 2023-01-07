@@ -10,7 +10,7 @@ const Myreviews = () => {
     const [items, setitem] = useState([])
     const { users } = useContext(CallContext)
     useEffect(() => {
-      fetch('https://creative-assign-server-abdulalnoman.vercel.app/getreviews')
+      fetch('http://localhost:5000/getreviews')
         .then(res => res.json())
         .then(data => {
             if (users?.email) {
@@ -20,7 +20,7 @@ const Myreviews = () => {
         })
     }, [])
     const handleDelete = (id) => {
-        fetch (`https://creative-assign-server-abdulalnoman.vercel.app/deletedata?delete=${id}`, {
+        fetch (`http://localhost:5000/deletedata?delete=${id}`, {
             method:'DELETE'
         })
         .then(res=>res.json())
@@ -37,7 +37,8 @@ const Myreviews = () => {
         <div className='bg-sky-700'>
             <div className='container mx-auto min-h-screen '>
             <Helmet>
-                <title>servicesDetails</title>
+                    <title>servicesDetails</title>
+                    <meta name="description" content="Helmet application" />
             </Helmet>
                 <div className=''>
                     {

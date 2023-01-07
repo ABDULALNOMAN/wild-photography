@@ -10,7 +10,7 @@ const Servicedetails = () => {
     const { users } = useContext(CallContext)
     const { image, name, price, rating, details, _id } = useLoaderData()
     useEffect(() => {
-        fetch('https://creative-assign-server-abdulalnoman.vercel.app/getreviews')
+        fetch('http://localhost:5000/getreviews')
             .then(res => res.json())
             .then(data =>setReviewItem(data))
     }, [])
@@ -30,7 +30,7 @@ const Servicedetails = () => {
             service: name,
             rating:rating
         }
-        fetch('https://creative-assign-server-abdulalnoman.vercel.app/reviews', {
+        fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -52,7 +52,8 @@ const Servicedetails = () => {
             <div className='container mx-auto py-4'>
                 <div className=''>
                 <Helmet>
-                    <title>servicesDetails</title>
+                        <title>servicesDetails</title>
+                        <meta name="description" content="Helmet application" />
                 </Helmet>
                     <div className="w-full shadow-xl h-full bg-sky-500 py-5 ">
                         <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 h-full md:p-3 p-10'>

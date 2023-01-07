@@ -7,10 +7,10 @@ import Contexting from './Component/Contexting/Contexting';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <PhotoProvider>
-      <Contexting>
+    <Contexting>
+      <PhotoProvider>
         <App />
-      </Contexting>
-    </PhotoProvider>
+      </PhotoProvider>
+    </Contexting>
   </React.StrictMode>
 )

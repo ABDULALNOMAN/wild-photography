@@ -11,6 +11,7 @@ const Servicesitem = ({ data }) => {
         <div className='md:mx-0 mx-10 md:mb-3 mb-3'>
             <Helmet>
                 <title>Services</title>
+                <meta name="description" content="Nested component" />
             </Helmet>
             <div className="w-full h-full shadow-2xl shadow-slate-900">
                 <div className='flex flex-col h-full'>

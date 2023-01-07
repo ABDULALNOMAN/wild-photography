@@ -1,13 +1,14 @@
 .bg-img-1{
-  background-image:linear-gradient(rgba(4, 93, 148, 0.859),rgba(15, 40, 54, 0.5)), url("../../../../assets/group-elephants-walking-dry-grass-wilderness.jpg");
+  background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.851) 100%), url("../../../../assets/group-elephants-walking-dry-grass-wilderness.jpg");
   background-position:center;
 }
 .bg-img-2{
-    background-image:linear-gradient(rgba(34, 109, 195, 0.807),rgba(6, 43, 61, 0.111)), url('../../../../assets/flamingo.jpg');
+    background-image:linear-gradient(180deg, rgba(0, 0, 0, 0.939) 0%, rgba(0, 0, 0, 0.35) 100%), url('../../../../assets/flamingo.jpg');
     background-position: center;
 }
 .bg-img-3{
-    background-image:linear-gradient(rgba(12, 70, 97, 0.665),rgba(28, 66, 82, 0.6)), url('../../../../assets/selective-focus-shot-beautiful-bird-flying-high-forest.jpg');
+    /* background:url(../../../../assets/video/nature-makes-you-happy-bbc-earth-online-video-cuttercom-hzd7mbhc-1_9hkSfGt2.mp4); */
+    background-image:linear-gradient(180deg, rgba(0, 0, 0, 0.898) 0%, rgba(0, 0, 0, 0.422) 100%), url('../../../../assets/selective-focus-shot-beautiful-bird-flying-high-forest.jpg');
     background-position: center;
 }
 .img-utilite{
